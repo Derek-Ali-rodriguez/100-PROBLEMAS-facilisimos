@@ -1,1 +1,14 @@
+#Calculadora de factoriales
+def factorial(n):
+    if n < 0:
+        return "El factorial no está definido para números negativos."
+    elif n == 0 or n == 1:
+        return 1
+    else:
+        return n * factorial(n - 1)
 
+n = int(input("Ingrese un número positivo: "))
+
+resultado = factorial(n)
+
+print(f"El factorial de {n} es: {resultado}")
