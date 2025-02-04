@@ -1,1 +1,7 @@
-
+#Calculadora basica de dos valores en cuales se haran una  multiplicacion division sustraccion y aditacion
+valora = float(input("escriba valor a"))
+valorb = float(input("escriba valor b"))
+print("adicion:", valora + valorb)
+print("sustraccion:", valora - valorb)
+print("multiplicacion:", valora * valorb)
+print("division:", valora / valorb)
