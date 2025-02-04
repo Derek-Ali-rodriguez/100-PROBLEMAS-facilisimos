@@ -1,0 +1,19 @@
+def verificar_numero(num1, num2):
+    # Verificar si el número es par o impar
+    if num1 % 2 == 0:
+        print(f"{num1} es un número par.")
+    else:
+        print(f"{num1} es un número impar.")
+    
+    # Verificar si el número es múltiplo de otro
+    if num1 % num2 == 0:
+        print(f"{num1} es múltiplo de {num2}.")
+    else:
+        print(f"{num1} no es múltiplo de {num2}.")
+
+# Solicitar los números al usuario
+numero1 = int(input("Ingrese el primer número: "))
+numero2 = int(input("Ingrese el segundo número para verificar si es divisor: "))
+
+# Llamar a la función
+verificar_numero(numero1, numero2)
