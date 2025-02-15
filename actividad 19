@@ -1,0 +1,62 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 1. Distribución Uniforme
+def distribucion_uniforme(n, low, high):
+    return np.random.uniform(low, high, n)
+
+# 2. Distribución Normal
+def distribucion_normal(n, media, desviacion_estandar):
+    return np.random.normal(media, desviacion_estandar, n)
+
+# 3. Distribución Binomial
+def distribucion_binomial(n, n_trials, p):
+    return np.random.binomial(n_trials, p, n)
+
+# 4. Distribución de Poisson
+def distribucion_poisson(n, lam):
+    return np.random.poisson(lam, n)
+
+
+def distribucion_exponencial(n, scale):
+    return np.random.exponential(scale, n)
+
+# Parámetros de ejemplo
+n = 1000  
+low, high = 0, 10 
+media, desviacion_estandar = 0, 1 
+n_trials, p = 10, 0.5  
+lam = 3  
+scale = 2  
+# Generar muestras de cada distribución
+uniforme = distribucion_uniforme(n, low, high)
+normal = distribucion_normal(n, media, desviacion_estandar)
+binomial = distribucion_binomial(n, n_trials, p)
+poisson = distribucion_poisson(n, lam)
+exponencial = distribucion_exponencial(n, scale)
+
+# Mostrar histogramas para visualizar las distribuciones
+plt.figure(figsize=(15, 10))
+
+plt.subplot(2, 3, 1)
+plt.hist(uniforme, bins=30, color='blue', alpha=0.7)
+plt.title('Distribución Uniforme')
+
+plt.subplot(2, 3, 2)
+plt.hist(normal, bins=30, color='green', alpha=0.7)
+plt.title('Distribución Normal')
+
+plt.subplot(2, 3, 3)
+plt.hist(binomial, bins=30, color='red', alpha=0.7)
+plt.title('Distribución Binomial')
+
+plt.subplot(2, 3, 4)
+plt.hist(poisson, bins=30, color='purple', alpha=0.7)
+plt.title('Distribución Poisson')
+
+plt.subplot(2, 3, 5)
+plt.hist(exponencial, bins=30, color='orange', alpha=0.7)
+plt.title('Distribución Exponencial')
+
+plt.tight_layout()
+plt.show()
