@@ -1,0 +1,15 @@
+def es_bisiesto(año):
+    # Verificamos si el año es divisible por 4
+    if (año % 4 == 0 and año % 100 != 0) or (año % 400 == 0):
+        return True
+    else:
+        return False
+
+# Solicitar el año al usuario
+año = int(input("Ingresa el año: "))
+
+# Comprobar si el año es bisiesto
+if es_bisiesto(año):
+    print(f"{año} es un año bisiesto.")
+else:
+    print(f"{año} no es un año bisiesto.")
