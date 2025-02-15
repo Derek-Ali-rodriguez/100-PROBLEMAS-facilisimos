@@ -1,0 +1,24 @@
+def contar_vocales_consonantes(cadena):
+    vocales = "aeiouAEIOU"
+    consonantes = "bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+    
+    num_vocales = 0
+    num_consonantes = 0
+    
+
+    for char in cadena:
+        if char in vocales:
+            num_vocales += 1
+        elif char in consonantes:
+            num_consonantes += 1
+    
+    return num_vocales, num_consonantes
+
+cadena = input("Ingresa una cadena de texto: ")
+
+# Contar vocales y consonantes
+vocales, consonantes = contar_vocales_consonantes(cadena)
+
+
+print(f"Vocales: {vocales}")
+print(f"Consonantes: {consonantes}")
