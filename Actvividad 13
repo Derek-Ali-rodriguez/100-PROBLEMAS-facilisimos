@@ -1,0 +1,26 @@
+def convertir_temperatura(valor, escala_origen, escala_destino):
+
+    if escala_origen == "Celsius":
+        celsius = valor
+    elif escala_origen == "Fahrenheit":
+        celsius = (valor - 32) * 5 / 9
+    elif escala_origen == "Kelvin":
+        celsius = valor - 273.15
+    else:
+        return "Escala de origen no válida"
+
+    if escala_destino == "Celsius":
+        return celsius
+    elif escala_destino == "Fahrenheit":
+        return (celsius * 9 / 5) + 32
+    elif escala_destino == "Kelvin":
+        return celsius + 273.15
+    else:
+        return "Escala de destino no válida"
+
+valor = float(input("Ingresa la temperatura: "))
+escala_origen = input("Ingresa la escala de origen (Celsius, Fahrenheit, Kelvin): ")
+escala_destino = input("Ingresa la escala de destino (Celsius, Fahrenheit, Kelvin): ")
+
+resultado = convertir_temperatura(valor, escala_origen, escala_destino)
+print(f"{valor} {escala_origen} es igual a {resultado} {escala_destino}")
