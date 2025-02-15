@@ -1,0 +1,29 @@
+def bubble_sort(lista):
+    n = len(lista)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if lista[j] > lista[j+1]:
+                lista[j], lista[j+1] = lista[j+1], lista[j]  
+
+    
+  
+   #ejemplo
+lista = [64, 34, 25, 12, 22, 11, 90]
+
+# Ordenar usando el algoritmo de burbuja
+print("Ordenado con Bubble Sort:", bubble_sort(lista.copy()))
+
+def insertion_sort(lista):
+    for i in range(1, len(lista)):
+        clave = lista[i]
+        j = i-1
+        while j >= 0 and clave < lista[j]:
+            lista[j+1] = lista[j]
+            j -= 1
+        lista[j+1] = clave
+    return lista
+    lista = [64, 334, 255, 172, 262, 151, 7]
+
+# Ordenar usando el algoritmo de inserción
+print("Ordenado con Insertion Sort:", insertion_sort(lista.copy()))
+
