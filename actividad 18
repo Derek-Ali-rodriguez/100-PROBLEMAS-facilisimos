@@ -1,0 +1,23 @@
+
+import cmath  # Usamos cmath para manejar números complejos
+
+def resolver_ecuacion_cuadratica(a, b, c):
+    # Calculamos el discriminante
+    discriminante = b**2 - 4*a*c
+    
+    # Calculamos las dos soluciones usando la fórmula general
+    sol1 = (-b + cmath.sqrt(discriminante)) / (2*a)
+    sol2 = (-b - cmath.sqrt(discriminante)) / (2*a)
+    
+    return sol1, sol2
+
+# Solicitar los coeficientes al usuario
+a = float(input("Ingresa el coeficiente a: "))
+b = float(input("Ingresa el coeficiente b: "))
+c = float(input("Ingresa el coeficiente c: "))
+
+# Resolver la ecuación cuadrática
+solucion1, solucion2 = resolver_ecuacion_cuadratica(a, b, c)
+
+# Mostrar las soluciones
+print(f"Las soluciones de la ecuación son: {solucion1} y {solucion2}")
