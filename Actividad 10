@@ -1,0 +1,20 @@
+path = "C:/Users/derek.rodriguez0907/Desktop/"
+name = "tarea1.txt"
+ext = "lagr"
+
+with open(path+name+"."+ext,"r", encoding="utf8") as tarea1.txt:
+    #for i in range(10):
+    #    print(i, file=tarea1.txt)
+    for line in tarea1.txt.readlines():
+        line = line.replace("\n", "")
+        print(line)
+
+    print("HOLA MUNDO")
+    print("HELLO WORLD")
+
+
+
+archivito = open(path+name+"1.txt","w", encoding="utf8")
+
+print("Mi archivio está corrioso.",file =archivito)
+
