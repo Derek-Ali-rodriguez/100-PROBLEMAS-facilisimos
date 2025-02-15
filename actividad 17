@@ -1,0 +1,110 @@
+class Pila:
+    def __init__(self):
+        self.items = []
+
+    def esta_vacia(self):
+        return len(self.items) == 0
+
+    def apilar(self, item):
+        self.items.append(item)
+
+    def desapilar(self):
+        if not self.esta_vacia():
+            return self.items.pop()
+        else:
+            return "La pila está vacía"
+
+    def ver_tope(self):
+        if not self.esta_vacia():
+            return self.items[-1]
+        else:
+            return "La pila está vacía"
+
+    def tamanio(self):
+        return len(self.items)
+
+# Uso de la pila
+pila = Pila()
+pila.apilar(10)
+pila.apilar(20)
+print(pila.desapilar())  
+print(pila.ver_tope())
+
+class Cola:
+    def __init__(self):
+        self.items = []
+
+    def esta_vacia(self):
+        return len(self.items) == 0
+
+    def encolar(self, item):
+        self.items.append(item)
+
+    def desencolar(self):
+        if not self.esta_vacia():
+            return self.items.pop(0)
+        else:
+            return "La cola está vacía"
+
+    def ver_frente(self):
+        if not self.esta_vacia():
+            return self.items[0]
+        else:
+            return "La cola está vacía"
+
+    def tamanio(self):
+        return len(self.items)
+
+# Uso de la cola
+cola = Cola()
+cola.encolar(10)
+cola.encolar(20)
+print(cola.desencolar())  
+print(cola.ver_frente())  
+
+class Nodo:
+    def __init__(self, dato):
+        self.dato = dato
+        self.siguiente = None
+
+class ListaEnlazada:
+    def __init__(self):
+        self.cabeza = None
+
+    def esta_vacia(self):
+        return self.cabeza is None
+
+    def agregar_al_final(self, dato):
+        nuevo_nodo = Nodo(dato)
+        if self.esta_vacia():
+            self.cabeza = nuevo_nodo
+        else:
+            nodo_actual = self.cabeza
+            while nodo_actual.siguiente:
+                nodo_actual = nodo_actual.siguiente
+            nodo_actual.siguiente = nuevo_nodo
+
+    def eliminar_inicio(self):
+        if not self.esta_vacia():
+            self.cabeza = self.cabeza.siguiente
+        else:
+            return "La lista está vacía"
+
+    def mostrar_lista(self):
+        if not self.esta_vacia():
+            nodo_actual = self.cabeza
+            while nodo_actual:
+                print(nodo_actual.dato, end=" -> ")
+                nodo_actual = nodo_actual.siguiente
+            print("None")
+        else:
+            print("La lista está vacía")
+
+# Uso de la lista enlazada
+lista = ListaEnlazada()
+lista.agregar_al_final(10)
+lista.agregar_al_final(20)
+lista.agregar_al_final(30)
+lista.mostrar_lista()  
+lista.eliminar_inicio()
+lista.mostrar_lista()  
