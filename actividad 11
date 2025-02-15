@@ -1,0 +1,16 @@
+def es_palindromo(cadena):
+   
+    cadena = cadena.replace(" ", "").lower()
+    
+    # Verificar si la cadena es igual a su reverso
+    if cadena == cadena[::-1]:
+        return True
+    else:
+        return False
+ 
+# Ejemplo de uso
+cadena = "pepocho"
+if es_palindromo(cadena):
+    print("La cadena es un palíndromo.")
+else:
+    print("La cadena no es un palíndromo.")
