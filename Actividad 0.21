@@ -1,0 +1,23 @@
+import math
+
+# Función para calcular el área de un círculo
+def area_circulo(radio):
+    return math.pi * (radio ** 2)
+
+# Función para calcular el volumen de un cilindro
+def volumen_cilindro(radio, altura):
+    return math.pi * (radio ** 2) * altura
+
+# Función para calcular el área de un cilindro 
+def area_cilindro(radio, altura):
+    area_lateral = 2 * math.pi * radio * altura
+    area_bases = 2 * math.pi * (radio ** 2)
+    return area_lateral + area_bases
+
+#ejemplo de usp
+radio_circulo = int(input("ingrese radio")) 
+altura_cilindro = int(input("ingrese altura"))  
+volumen_cilindro_resultado = volumen_cilindro(radio_circulo, altura_cilindro)
+area_cilindro_resultado = area_cilindro(radio_circulo, altura_cilindro)
+print(f"Volumen del cilindro: {volumen_cilindro_resultado:.2f} unidades cúbicas")
+print(f"Área del cilindro: {area_cilindro_resultado:.2f} unidades cuadradas")
