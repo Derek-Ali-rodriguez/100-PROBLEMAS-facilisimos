@@ -1,0 +1,25 @@
+ import numpy as np
+import matplotlib.pyplot as plt
+
+datos = np.random.normal(loc=0, scale=1, size=1000)
+
+# Generar histograma con datos aletorias
+plt.hist(datos, bins=30, edgecolor='black', alpha=0.7)
+
+plt.title('Histograma de Datos Aleatorios (Distribución Normal)')
+plt.xlabel('Valor')
+plt.ylabel('Frecuencia')
+
+# Mostrar histograma
+plt.show()
+#MEDIA
+media = np.mean(datos)
+# Desviación estándar
+desviacion_estandar = np.std(datos)
+# Varianza
+varianza = np.var(datos)
+
+# Mostrar estadísticas
+print(f"Media: {media}")
+print(f"Desviación estándar: {desviacion_estandar}")
+print(f"Varianza: {varianza}")
