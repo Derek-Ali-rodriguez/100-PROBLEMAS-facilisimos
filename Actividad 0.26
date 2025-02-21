@@ -1,0 +1,75 @@
+class AgendaContactos:
+    def __init__(self):
+        # Diccionario para almacenar los contactos
+        self.contactos = {}
+
+    # Agregar un contacto
+    def agregar_contacto(self, nombre, telefono, correo):
+        if nombre in self.contactos:
+            print(f"El contacto {nombre} ya existe.")
+        else:
+            self.contactos[nombre] = {"Telefono": telefono, "Correo": correo}
+            print(f"Contacto {nombre} agregado exitosamente.")
+
+    # Mostrar todos los contactos
+    def mostrar_contactos(self):
+        if not self.contactos:
+            print("No hay contactos en la agenda.")
+        else:
+            print("\nAgenda de Contactos:")
+            for nombre, info in self.contactos.items():
+                print(f"Nombre: {nombre}, Teléfono: {info['Telefono']}, Correo: {info['Correo']}")
+
+    # Buscar un contacto
+    def buscar_contacto(self, nombre):
+        if nombre in self.contactos:
+            info = self.contactos[nombre]
+            print(f"\nContacto encontrado: {nombre} - Teléfono: {info['Telefono']} - Correo: {info['Correo']}")
+        else:
+            print(f"No se encontró el contacto {nombre}.")
+
+    # Eliminar un contacto
+    def eliminar_contacto(self, nombre):
+        if nombre in self.contactos:
+            del self.contactos[nombre]
+            print(f"Contacto {nombre} eliminado exitosamente.")
+        else:
+            print(f"No se encontró el contacto {nombre}.")
+
+# Función principal para interactuar con la agenda
+def main():
+    agenda = AgendaContactos()
+    
+    while True:
+        print("\n--- Menú de la Agenda ---")
+        print("1. Agregar contacto")
+        print("2. Mostrar todos los contactos")
+        print("3. Buscar contacto")
+        print("4. Eliminar contacto")
+        print("5. Salir")
+        
+        opcion = input("Elige una opción (1-5): ")
+        
+        if opcion == '1':
+            nombre = input("Ingresa el nombre del contacto: ")
+            telefono = input("Ingresa el teléfono del contacto: ")
+            correo = input("Ingresa el correo del contacto: ")
+            agenda.agregar_contacto(nombre, telefono, correo)
+        elif opcion == '2':
+            agenda.mostrar_contactos()
+        elif opcion == '3':
+            nombre = input("Ingresa el nombre del contacto a buscar: ")
+            agenda.buscar_contacto(nombre)
+        elif opcion == '4':
+            nombre = input("Ingresa el nombre del contacto a eliminar: ")
+            agenda.eliminar_contacto(nombre)
+        elif opcion == '5':
+            print("¡Hasta luego!")
+            break
+        else:
+            print("Opción no válida. Intenta nuevamente.")
+
+# Ejecutar la función principal
+if __name__ == "__main__":
+    main()
+    
