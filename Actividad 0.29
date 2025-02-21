@@ -1,0 +1,66 @@
+import numpy as np
+from scipy import stats
+import matplotlib.pyplot as plt
+
+# Función para generar datos aleatorios
+def generar_datos(tamaño, tipo_dato='normal', media=0, desviacion_estandar=1):
+    if tipo_dato == 'normal':
+        # Generar datos aleatorios de una distribución normal
+        datos = np.random.normal(media, desviacion_estandar, tamaño)
+    elif tipo_dato == 'uniforme':
+        # Generar datos aleatorios de una distribución uniforme
+        datos = np.random.uniform(0, 100, tamaño)
+    else:
+        raise ValueError("Tipo de dato no soportado. Usa 'normal' o 'uniforme'.")
+    
+    return datos
+
+# Función para calcular estadísticas básicas
+def analizar_datos(datos):
+    media = np.mean(datos)
+    mediana = np.median(datos)
+    moda = stats.mode(datos).mode[0]  # Acceder correctamente a la moda
+    desviacion_estandar = np.std(datos)
+    varianza = np.var(datos)
+    
+    return media, mediana, moda, desviacion_estandar, varianza
+
+# Función para visualizar los datos con un histograma
+def visualizar_datos(datos):
+    plt.hist(datos, bins=20, edgecolor='black', alpha=0.7)
+    plt.title('Histograma de Datos Generados')
+    plt.xlabel('Valor')
+    plt.ylabel('Frecuencia')
+    plt.grid(True)
+    plt.show()
+
+def main():
+    print("Generador y Analizador de Datos Estadísticos")
+    
+    # Pedir al usuario las opciones de generación de datos
+    tamaño = int(input("Ingresa el tamaño del conjunto de datos (por ejemplo, 1000): "))
+    tipo_dato = input("Ingresa el tipo de dato ('normal' o 'uniforme'): ").lower()
+    media = float(input("Ingresa la media para la distribución normal (por defecto 0): ") or 0)
+    desviacion_estandar = float(input("Ingresa la desviación estándar para la distribución normal (por defecto 1): ") or 1)
+    
+    # Generar datos aleatorios
+    datos = generar_datos(tamaño, tipo_dato, media, desviacion_estandar)
+    
+    # Analizar los datos generados
+    media, mediana, moda, desviacion_estandar, varianza = analizar_datos(datos)
+    
+    # Mostrar los resultados
+    print(f"\nAnálisis Estadístico de los Datos Generados:")
+    print(f"Media: {media}")
+    print(f"Mediana: {mediana}")
+    print(f"Moda: {moda}")
+    print(f"Desviación Estándar: {desviacion_estandar}")
+    print(f"Varianza: {varianza}")
+    
+    # Visualizar los datos con un histograma
+    visualizar_datos(datos)
+
+# Ejecutar la función principal
+if __name__ == "__main__":
+    main()
+
