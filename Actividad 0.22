@@ -1,0 +1,16 @@
+import random
+
+# Función para simular el lanzamiento de un dado
+def lanzar_dado():
+    return random.randint(1, 6)
+
+# Función para simular el lanzamiento de una moneda
+def lanzar_moneda():
+    return random.choice(['Cara', 'Cruz'])
+
+dado_resultado = lanzar_dado()
+moneda_resultado = lanzar_moneda()
+
+#  resultados
+print(f"El resultado del lanzamiento del dado es: {dado_resultado}")
+print(f"El resultado del lanzamiento de la moneda es: {moneda_resultado}")
