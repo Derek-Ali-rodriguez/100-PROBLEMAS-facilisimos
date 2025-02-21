@@ -1,0 +1,41 @@
+# Función recursiva para calcular el factorial de un número
+def factorial(n):
+    # Caso base
+    if n == 0:
+        return 1
+    # Caso recursivo
+    else:
+        return n * factorial(n - 1)
+
+# Prueba de la función factorial
+numero = int(input("Ingresa un número para calcular su factorial: "))
+print(f"El factorial de {numero} es {factorial(numero)}")
+
+# Función recursiva para sumar los primeros n números naturales
+def suma_numeros(n):
+    # Caso base
+    if n == 0:
+        return 0
+    # Caso recursivo
+    else:
+        return n + suma_numeros(n - 1)
+
+# Prueba de la función suma_numeros
+numero = int(input("Ingresa un número para sumar los primeros n números naturales: "))
+print(f"La suma de los primeros {numero} números naturales es {suma_numeros(numero)}")
+
+# Función recursiva para calcular el n-ésimo número de Fibonacci
+def fibonacci(n):
+    # Casos base
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    # Caso recursivo
+    else:
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+# Prueba de la función fibonacci
+numero = int(input("Ingresa el valor de n para obtener el n-ésimo número de Fibonacci: "))
+print(f"El número de Fibonacci en la posición {numero} es {fibonacci(numero)}")
+
