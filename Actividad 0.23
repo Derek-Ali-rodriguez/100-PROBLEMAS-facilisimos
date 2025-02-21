@@ -1,0 +1,36 @@
+import numpy as np
+
+# Crear matrices (en este caso de 2x2)
+matriz_A = np.array([[(int(input("ingrese elemnto 1 de la matriz A 2x2"))), (int(input("ingrese elemnto 2 de la matriz A 2x2")))], [(int(input("ingrese elemnto 3 de la matriz A 2x2"))), (int(input("ingrese elemnto 4 de la matriz A 2x2")))]])
+matriz_B = np.array([[(int(input("ingrese elemnto 1 de la matriz B 2x2"))), (int(input("ingrese elemnto 2 de la matriz B  2x2")))], [(int(input("ingrese elemnto 3 de la matriz B 2x2"))), (int(input("ingrese elemnto 4 de la matriz B 2x2")))]])
+
+# Suma de matrices
+suma_matrices = matriz_A + matriz_B
+
+# Multiplicación de matrices
+multiplicacion_matrices = np.dot(matriz_A, matriz_B)
+
+# Transposición de la matriz A
+transpuesta_A = np.transpose(matriz_A)
+
+# Determinante de la matriz A
+determinante_A = np.linalg.det(matriz_A)
+
+# Resultados
+print("Matriz A:")
+print(matriz_A)
+
+print("\nMatriz B:")
+print(matriz_B)
+
+print("\nSuma de las matrices A y B:")
+print(suma_matrices)
+
+print("\nMultiplicación de las matrices A y B:")
+print(multiplicacion_matrices)
+
+print("\nTranspuesta de la matriz A:")
+print(transpuesta_A)
+
+print("\nDeterminante de la matriz A:")
+print(determinante_A)
