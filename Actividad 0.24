@@ -1,0 +1,27 @@
+# Función para calcular la suma de una serie aritmética
+def suma_serie_aritmetica(a, d, n):
+    return n / 2 * (2 * a + (n - 1) * d)
+
+# Función para calcular la suma de una serie geométrica
+def suma_serie_geometrica(a, r, n):
+    if r != 1:
+        return a * (1 - r ** n) / (1 - r)
+    else:
+        return a * n  # Si r = 1, la suma es simplemente a * n
+
+# Ejemplo de uso:
+
+a_aritmetica = int(input(" Primer termino")) 
+d_aritmetica = int(input("  diferencia de terminos")) 
+n_aritmetica = int(input(" Número de términos")) 
+
+
+a_geometrica = int(input(" Primer termino")) 
+r_geometrica = int(input(" Razon")) 
+n_geometrica = int(input(" Número de términos")) 
+suma_aritmetica = suma_serie_aritmetica(a_aritmetica, d_aritmetica, n_aritmetica)
+suma_geometrica = suma_serie_geometrica(a_geometrica, r_geometrica, n_geometrica)
+
+# Mostrar resultados
+print(f"Suma de la serie aritmética: {suma_aritmetica}")
+print(f"Suma de la serie geométrica: {suma_geometrica}")
