@@ -1,0 +1,90 @@
+def convertir_longitud(valor, de_unidad, a_unidad):
+    # Conversión de Longitud
+    unidades = {
+        'metros': 1,
+        'kilometros': 1000,
+        'centimetros': 0.01
+    }
+    
+    # Convertir el valor de la unidad original a metros (base)
+    valor_en_metros = valor * unidades[de_unidad]
+    
+    # Convertir de metros a la unidad de destino
+    return valor_en_metros / unidades[a_unidad]
+
+def convertir_masa(valor, de_unidad, a_unidad):
+    # Conversión de Masa
+    unidades = {
+        'kilogramos': 1,
+        'gramos': 0.001,
+        'libras': 0.453592
+    }
+    
+    # Convertir el valor de la unidad original a kilogramos (base)
+    valor_en_kilogramos = valor * unidades[de_unidad]
+    
+    # Convertir de kilogramos a la unidad de destino
+    return valor_en_kilogramos / unidades[a_unidad]
+
+def convertir_temperatura(valor, de_unidad, a_unidad):
+    # Conversión de Temperatura
+    if de_unidad == 'Celsius':
+        if a_unidad == 'Fahrenheit':
+            return (valor * 9/5) + 32
+        elif a_unidad == 'Kelvin':
+            return valor + 273.15
+    elif de_unidad == 'Fahrenheit':
+        if a_unidad == 'Celsius':
+            return (valor - 32) * 5/9
+        elif a_unidad == 'Kelvin':
+            return (valor - 32) * 5/9 + 273.15
+    elif de_unidad == 'Kelvin':
+        if a_unidad == 'Celsius':
+            return valor - 273.15
+        elif a_unidad == 'Fahrenheit':
+            return (valor - 273.15) * 9/5 + 32
+
+def main():
+    print("Bienvenido al Conversor de Unidades")
+    
+    while True:
+        print("\nElige el tipo de unidad a convertir:")
+        print("1. Longitud (metros, kilometros, centimetros)")
+        print("2. Masa (kilogramos, gramos, libras)")
+        print("3. Temperatura (Celsius, Fahrenheit, Kelvin)")
+        print("4. Salir")
+        
+        opcion = input("Ingresa el número de la opción (1-4): ")
+        
+        if opcion == '1':
+            valor = float(input("Ingresa el valor: "))
+            de_unidad = input("Ingresa la unidad de origen (metros, kilometros, centimetros): ").lower()
+            a_unidad = input("Ingresa la unidad de destino (metros, kilometros, centimetros): ").lower()
+            resultado = convertir_longitud(valor, de_unidad, a_unidad)
+            print(f"{valor} {de_unidad} es igual a {resultado} {a_unidad}.")
+        
+        elif opcion == '2':
+            valor = float(input("Ingresa el valor: "))
+            de_unidad = input("Ingresa la unidad de origen (kilogramos, gramos, libras): ").lower()
+            a_unidad = input("Ingresa la unidad de destino (kilogramos, gramos, libras): ").lower()
+            resultado = convertir_masa(valor, de_unidad, a_unidad)
+            print(f"{valor} {de_unidad} es igual a {resultado} {a_unidad}.")
+        
+        elif opcion == '3':
+            valor = float(input("Ingresa el valor: "))
+            de_unidad = input("Ingresa la unidad de origen (Celsius, Fahrenheit, Kelvin): ").capitalize()
+            a_unidad = input("Ingresa la unidad de destino (Celsius, Fahrenheit, Kelvin): ").capitalize()
+            resultado = convertir_temperatura(valor, de_unidad, a_unidad)
+            print(f"{valor} {de_unidad} es igual a {resultado} {a_unidad}.")
+        
+        elif opcion == '4':
+            print("¡Hasta luego!")
+            break
+        
+        else:
+            print("Opción no válida. Intenta nuevamente.")
+
+# Ejecutar la función principal
+if __name__ == "__main__":
+    main()
+    
